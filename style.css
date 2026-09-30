@@ -332,6 +332,109 @@ footer.site-footer {
   text-align: center;
 }
 
+/* ---- Page hero (interior pages) ---- */
+.page-hero {
+  padding: 60px 0 48px;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-hero h1 {
+  font-size: 2.2rem;
+  max-width: 18ch;
+}
+
+.page-hero p.lede {
+  font-size: 1.05rem;
+  max-width: 60ch;
+}
+
+/* ---- Feature grid (AI Receptionist page) ---- */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  padding: 56px 0;
+}
+
+.feature-card {
+  display: flex;
+  gap: 16px;
+  padding: 22px;
+  background-color: var(--panel);
+  border-radius: var(--radius);
+}
+
+.feature-card .feature-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+
+.feature-card p {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+/* ---- Pricing table ---- */
+.pricing-section {
+  padding: 24px 0 56px;
+}
+
+table.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+
+table.pricing-table caption {
+  text-align: left;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+table.pricing-table th,
+table.pricing-table td {
+  text-align: left;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+table.pricing-table thead th {
+  background-color: var(--primary);
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+}
+
+table.pricing-table tbody tr:nth-child(even) {
+  background-color: var(--panel);
+}
+
+table.pricing-table td.price {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.pricing-note {
+  margin-top: 18px;
+  font-size: 0.85rem;
+}
+
 /* ---- Responsive ---- */
 @media (max-width: 720px) {
   .hero .wrap {
@@ -339,11 +442,17 @@ footer.site-footer {
   }
   .product-grid,
   .steps,
-  .footer-grid {
+  .footer-grid,
+  .feature-grid {
     grid-template-columns: 1fr;
   }
   nav.main-nav ul {
     flex-wrap: wrap;
     gap: 14px;
+  }
+  table.pricing-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
   }
 }
