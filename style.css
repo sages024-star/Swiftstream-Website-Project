@@ -1,0 +1,349 @@
+/* =============================================================
+   SwiftStreamAI style.css
+   Brand colors pulled from the live site (swiftstreamai.io)
+   ============================================================= */
+
+:root {
+  --bg: #ffffff;
+  --panel: #f4f7ff;
+  --text: #0a0f1e;
+  --muted: #5b6478;
+  --primary: #2558e8;
+  --secondary: #3b6eff;
+  --accent: #00d4ff;
+  --border: #e3e8f4;
+  --radius: 6px;
+  --max-width: 1080px;
+}
+
+/* ---- Reset-ish base ---- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  color: var(--text);
+  background-color: var(--bg);
+  line-height: 1.55;
+}
+
+h1, h2, h3 {
+  font-family: 'Space Grotesk', 'Inter', Arial, sans-serif;
+  line-height: 1.15;
+  margin: 0 0 0.5em 0;
+}
+
+p {
+  margin: 0 0 1em 0;
+  color: var(--muted);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---- Header & nav ---- */
+header.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 18px 0;
+}
+
+header.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+nav.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+
+nav.main-nav a {
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+nav.main-nav a[aria-current="page"] {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 4px;
+}
+
+/* ---- Hero ---- */
+.hero {
+  padding: 72px 0 64px;
+}
+
+.hero .wrap {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  max-width: 11ch;
+}
+
+.hero p.lede {
+  font-size: 1.1rem;
+  max-width: 46ch;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 26px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary);
+  text-decoration: none;
+}
+
+.trust-line {
+  margin-top: 22px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.stat-panel {
+  background-color: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+.stat-panel .stat {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.stat-panel .stat:last-child {
+  border-bottom: none;
+}
+
+.stat .stat-number {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.stat .stat-label {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* ---- Products ---- */
+.products {
+  padding: 56px 0;
+  border-top: 1px solid var(--border);
+}
+
+.section-heading {
+  max-width: 55ch;
+  margin-bottom: 36px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.product-card {
+  border-top: 3px solid var(--primary);
+  padding-top: 18px;
+}
+
+.product-card:nth-child(2) {
+  border-top-color: var(--secondary);
+}
+
+.product-card:nth-child(3) {
+  border-top-color: var(--accent);
+}
+
+.product-card h3 {
+  font-size: 1.15rem;
+}
+
+/* ---- How it works ---- */
+.how-it-works {
+  background-color: var(--panel);
+  padding: 56px 0;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  counter-reset: step;
+}
+
+.step {
+  position: relative;
+  padding-left: 46px;
+}
+
+.step::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step h3 {
+  font-size: 1.05rem;
+}
+
+/* ---- Testimonial ---- */
+.testimonial {
+  padding: 64px 0;
+}
+
+blockquote {
+  margin: 0;
+  border-left: 3px solid var(--accent);
+  padding-left: 28px;
+  font-size: 1.3rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.testimonial cite {
+  display: block;
+  margin-top: 16px;
+  font-style: normal;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* ---- Final CTA ---- */
+.cta-banner {
+  background-color: var(--primary);
+  color: #ffffff;
+  padding: 56px 0;
+  text-align: center;
+}
+
+.cta-banner h2 {
+  color: #ffffff;
+}
+
+.cta-banner .btn-primary {
+  background-color: #ffffff;
+  color: var(--primary);
+}
+
+.cta-banner .btn-primary:hover {
+  background-color: var(--panel);
+}
+
+/* ---- Footer ---- */
+footer.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 44px 0 28px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.footer-grid h4 {
+  font-size: 0.9rem;
+  margin: 0 0 12px 0;
+}
+
+.footer-grid ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-grid li {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.footer-bottom {
+  margin-top: 32px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 720px) {
+  .hero .wrap {
+    grid-template-columns: 1fr;
+  }
+  .product-grid,
+  .steps,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  nav.main-nav ul {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+}
